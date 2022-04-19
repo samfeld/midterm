@@ -1,0 +1,57 @@
+.container{
+    display: grid;
+    width: 90%;
+    justify-content: center;
+    justify-items: center;
+    margin: auto;
+    text-align: center;
+
+}
+.container img{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+figcaption{
+    text-transform: capitalize;
+}
+
+@media screen and (min-width: 600px){
+  a:focus, a:active{
+    left: auto;
+    top: auto;
+    height: auto;
+    overflow:auto;
+    text-align:center;
+    z-index: 999;
+    color: #616161;
+  }  
+  .container{
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  }
+  figure:nth-child(odd){
+      grid-column: 1/span 2;
+      grid-auto-flow: row;
+  }
+  figure:nth-child(even){
+      grid-column: 3/span 2;
+      grid-auto-flow: row;
+  }
+}
+@media screen and (min-width: 900px){
+    .container{
+        grid-template-columns: repeat(3, 30%);
+
+    }
+    .container figure:nth-child(odd){
+        grid-column: 1/span 2;
+        justify-items: start;
+        justify-content: start;
+        justify-self: start;
+    }
+    figure:nth-child(even){
+        grid-column: 2/span 2;
+        justify-items: end;
+    }
+}
