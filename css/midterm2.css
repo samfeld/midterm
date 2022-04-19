@@ -30,6 +30,9 @@ figcaption{
       grid-template-columns: 1fr 1fr 1fr 1fr;
 
   }
+  .container figure{
+    box-sizing: border-box;
+  }
   figure:nth-child(odd){
       grid-column: 1/span 2;
       grid-auto-flow: row;
@@ -53,5 +56,44 @@ figcaption{
     figure:nth-child(even){
         grid-column: 2/span 2;
         justify-items: end;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .container{
+        grid-template-columns: 50% 50%;
+    }
+    .container figure{
+        justify-items: center;
+        grid-auto-flow: column;
+    }
+    .container figure:nth-child(odd){
+        grid-column: 1/span 1;
+    }
+    .container figure:nth-child(even){
+        grid-column:2/span 1;
+    }
+    .container figure:nth-child(9n+1){
+        grid-column: 1/span 2;
+        
+    }
+    .container img:nth-child(odd){
+        transform: skew(-10deg);
+    }
+    .container img:nth-child(even){
+        transform: skew(10turn, 10deg);
+    }
+}
+
+@media screen and (prefers-reduced-motion){
+    h1:hover{
+        background-color: pink;
+        color: purple;
+        border: 25px solid;
+        border-radius: 5px;
+        transition: background-color 0s;
+        transition: color linear 2s;
+        transition: border 0s;
+        transition: border-radius; 
     }
 }
